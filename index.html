@@ -1,33 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Manager</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-    <link href="resources/css/style.css" type="text/css" rel="stylesheet" />
-    
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 10px;
+        background-color: #eee;
+        padding: 10px;
+      }
+
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 18px 0;
+        font-size: 30px;
+      }
+
+      .heading1,
+      .buttens1,
+      .lists1,
+      .plus1 {
+        grid-column: 1 / 7;
+      }
+
+      .heading1{
+        display: flex;
+      }
+      .buttens1{
+        display:flex;
+      }
+
+  .hd1 {
+        border: none;
+        color: balck;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin:auto;
+        font-weight:900;
+      }
+   .close1 {
+       background-color:red;
+       color:white;
+       border-radius: 50%;
+       width:25px;
+       height:25px;
+       float:right;
+       text-align: center;
+      }
+  .lists1{
+    align:left;
+  }
+
+  .circle {
+       background-color:green;
+       color:white;
+       border-radius: 50%;
+       width:40px;
+       height:40px;
+       float:right;
+       text-align: center;
+      }
+
+
+    </style>
   </head>
   <body>
-    <h1>Hello World this is the team</h1>
-    <p>Tekalegn, Jorge matute ,Esayas , Manaye</p>
+   <main class="container">
 
-    <main class="grid-container">
-      <header></header>
-      <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-     
+    <div class="grid-container">
+
+      <div class="heading1">
+        <div class="hd1">Sort</div>
+        <div class="hd1">Home</div>
+        <div class="hd1 close1">X</div>
       </div>
-      <footer></footer>
-    </main>
+
+          <button type="button" class="btn btn-primary">School</button>
+          <button type="button" class="btn btn-secondary">Work</button>
+          <button type="button" class="btn btn-success">BLLS</button>
+
+      <div class="lists1">
+        
+        
+        <div>task 1</div>
+        <div>task 2</div>
+        <div>task 3</div>
+        <div>task 4</div>
+       
+
+      <div class="plus1">
+          <div class="circle">+<div>
+      </div>
+    </div>
+  </main>
   </body>
 </html>
+
