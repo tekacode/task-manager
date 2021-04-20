@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
     <style>
-      .grid-container {
+    
+     .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
         grid-gap: 10px;
@@ -14,91 +20,72 @@
       .grid-container > div {
         background-color: rgba(255, 255, 255, 0.8);
         text-align: center;
-        padding: 18px 0;
-        font-size: 30px;
+        padding: 20px 0;
+        font-size: 20px;
       }
 
       .heading1,
-      .buttens1,
-      .lists1,
-      .plus1 {
+      .form1,
+      .status1
+      {
         grid-column: 1 / 7;
       }
 
-      .heading1{
-        display: flex;
-      }
-      .buttens1{
-        display:flex;
-      }
-
-  .hd1 {
-        border: none;
-        color: balck;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        margin:auto;
-        font-weight:900;
-      }
-   .close1 {
-       background-color:red;
-       color:white;
-       border-radius: 50%;
-       width:25px;
-       height:25px;
-       float:right;
-       text-align: center;
-      }
-  .lists1{
-    align:left;
-  }
-
-  .circle {
-       background-color:green;
-       color:white;
-       border-radius: 50%;
-       width:40px;
-       height:40px;
-       float:right;
-       text-align: center;
-      }
-
+    .status1 > div {
+        text-align:left;
+    }
+    .status1 > #stat{
+        text-align:right;
+    }
+    .form1 > #formOne{
+        text-align:left;
+    }
 
     </style>
   </head>
   <body>
-   <main class="container">
-
-    <div class="grid-container">
-
-      <div class="heading1">
-        <div class="hd1">Sort</div>
-        <div class="hd1">Home</div>
-        <div class="hd1 close1">X</div>
-      </div>
-
-          <button type="button" class="btn btn-primary">School</button>
-          <button type="button" class="btn btn-secondary">Work</button>
-          <button type="button" class="btn btn-success">BLLS</button>
-
-      <div class="lists1">
+    <main class="container">
+      <div class="grid-container">
+        <div class="heading1"><h1>Task List</h1></div>
+        <div class="form1">
+            <form id="formOne" action="#" method="POST">
+                <h2>Add New Task </h2>
+                <label for="taskName">Task Name:</label>
+                <input id="taskName">
+                <br>
+                <label for="taskDescription">Task Description:</label>
+                <input id="taskDescription" type="textarea">
+                <br>
+                <label for="assign">Assigned To:</label>
+                <input id="assign">
+                <br>
+                <label for="dueDate">Due Date:</label>
+                <input id="dueDate" type="date">
+                <br>
+                <input type="submit" value="Add Task">
+            </form>
+        </div>
+        <div class="status1">
+        <div id="stat">
+        <button type="button" class="btn btn-success">Satus</button>
         
+        </div>
+        <div>
+            <label>Task Name:</label>
+            <br>
+            <label>Task Description:</label>
+            <br>
+            <label>Assigned To:</label>
+            <br>
+            <label>Due Date</label>
+            <br>
+            <label>Status</label>
+            
+        </div>
         
-        <div>task 1</div>
-        <div>task 2</div>
-        <div>task 3</div>
-        <div>task 4</div>
-       
-
-      <div class="plus1">
-          <div class="circle">+<div>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
   </body>
 </html>
 
