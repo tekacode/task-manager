@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <link
@@ -7,10 +8,19 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <link src="style.css" type="text/css" rel="stylesheet">
     <style>
-    
-     .grid-container {
+
+       body {
+        width:500px;
+        margin:auto;
+      }
+
+      h1 {
+        text-align:center;
+        margin-top:1px;
+      }
+
+      .grid-container {
         display: grid;
         grid-template-columns: auto auto auto auto auto auto;
         grid-gap: 10px;
@@ -20,73 +30,119 @@
 
       .grid-container > div {
         background-color: rgba(255, 255, 255, 0.8);
-        text-align: center;
         padding: 20px 0;
         font-size: 20px;
       }
 
       .heading1,
       .form1,
-      .status1
-      {
+      .status1 {
         grid-column: 1 / 7;
       }
 
-    .status1 > div {
-        text-align:left;
-    }
-    .status1 > #stat{
-        text-align:right;
-    }
-    .form1 > #formOne{
-        text-align:left;
-    }
+      .status1 > div {
+        text-align: left;
+      }
+      .status1 > #stat {
+        text-align: right;
+      }
+      .form1 > #formOne {
+        text-align: left;
+      }
 
+      
+   
+   
     </style>
   </head>
   <body>
     <main class="container">
       <div class="grid-container">
         <div class="heading1"><h1>Task List</h1></div>
+
         <div class="form1">
-            <form id="formOne" action="#" method="POST">
-                <h2>Add New Task </h2>
+          <form action="#"  >
+
+              <div class="form-group">
                 <label for="taskName">Task Name:</label>
-                <input id="taskName">
-                <br>
-                <label for="taskDescription">Task Description:</label>
-                <input id="taskDescription" type="textarea">
-                <br>
-                <label for="assign">Assigned To:</label>
-                <input id="assign">
-                <br>
-                <label for="dueDate">Due Date:</label>
-                <input id="dueDate" type="date">
-                <br>
-                <input type="submit" value="Add Task">
-            </form>
-        </div>
-        <div class="status1">
-        <div id="stat">
-        <button type="button" class="btn btn-success">Satus</button>
-        
-        </div>
-        <div>
-            <label>Task Name:</label>
-            <br>
-            <label>Task Description:</label>
-            <br>
-            <label>Assigned To:</label>
-            <br>
-            <label>Due Date</label>
-            <br>
-            <label>Status</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="taskName"
+                    name="taskName"
+                  />
+              </div>
             
+            <div class="form-group">
+              <label for="taskDesc">Task Description:</label>
+              
+              <textarea id="taskDesc" class="md-textarea form-control" rows="3">
+               
+              </textarea>
+
+
+            <div class="row">
+               <div class="col">
+                  <div class="form-group">
+                  <label for="assignedTo">Assigned To:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="assignedTo"
+                  name="assignedTo"
+                />
+            </div>
+               </div>
+
+              <div class="col">
+                 <div class="form-group">
+                   <label for="duedate">Due Date:</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="duedate"
+                      name="duedate"
+                    />
+                 </div>
+                 </div>
+
+                
+              </div>
+
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-dark">Add Task</button>
+                  </div>
+                 </div>
+            </div>
+
+              
+            
+           
+             <br>
+            
+
+          </form>
         </div>
-        
+
+        <div class="status1">
+          <div id="stat">
+            <button type="button" class="btn btn-success">Satus</button>
+          </div>
+          <div>
+            <label>Task Name:</label>
+            <br />
+            <label>Task Description:</label>
+            <br />
+            <label>Assigned To:</label>
+            <br />
+            <label>Due Date</label>
+            <br />
+            <label>Status</label>
+          </div>
         </div>
+
       </div>
     </main>
   </body>
 </html>
-
