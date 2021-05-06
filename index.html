@@ -7,55 +7,17 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <style>
-      body {
-        width: 500px;
-        margin: auto;
-      }
-
-      h1 {
-        text-align: center;
-        margin-top: 1px;
-      }
-
-      .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-        grid-gap: 10px;
-        background-color: #eee;
-        padding: 10px;
-      }
-
-      .grid-container > div {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 10px 0;
-        font-size: 20px;
-      }
-
-      .heading1,
-      .form1,
-      .status1 {
-        grid-column: 1 / 7;
-      }
-
-      #stat {
-        text-align: right;
-      }
-      .status1 > #stat {
-        text-align: right;
-      }
-      .form1 > #formOne {
-        text-align: left;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <!--<body onload="printTaskList();"> -->
+  <body onload="printTaskList();">
     <main class="container">
       <div class="grid-container">
         <div class="heading1"><h1>Task List</h1></div>
 
+        <div id="error_message"></div>
         <div class="form1">
-          <form action="#">
+          <form onSubmit="processInput();" id="taskForm" method="GET">
             <div class="form-group">
               <label for="taskName">Task Name:</label>
               <input
@@ -68,9 +30,12 @@
 
             <div class="form-group">
               <label for="taskDesc">Task Description:</label>
-
-              <textarea id="taskDesc" class="md-textarea form-control" rows="3">
-              </textarea>
+              <textarea
+                id="taskDesc"
+                name="taskDesc"
+                class="md-textarea form-control"
+                rows="3"
+              ></textarea>
 
               <div class="row">
                 <div class="col">
@@ -100,32 +65,25 @@
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-dark">Add Task</button>
+                  <button
+                    type="submit"
+                    onSubmit="processInput()"
+                    class="btn btn-dark"
+                  >
+                    Add Task
+                  </button>
                 </div>
               </div>
             </div>
 
             <br />
           </form>
-
-          <div class="status1">
-            <div class="card">
-              <div id="stat">
-                <button type="button" class="btn btn-success btn-sm">
-                  Satus
-                </button>
-                <a href="#" style="font-size: 14px">Edit |</a>
-                <a href="#" style="font-size: 14px">Delete</a>
-              </div>
-              <label>Task Name:</label>
-              <label>Task Description:</label>
-              <label>Assigned To:</label>
-              <label>Due Date:</label>
-              <label>Status:</label>
-            </div>
-          </div>
+          <!---->
+          <div id="card_place"></div>
+          <!---->
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

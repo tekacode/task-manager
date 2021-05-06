@@ -1,0 +1,40 @@
+body {
+  width: 500px;
+  margin: auto;
+  background-color: #eee;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: rgb(165, 96, 96);
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.heading1,
+.form1,
+.status1 {
+  grid-column: 1 / 7;
+}
+
+#stat {
+  text-align: right;
+}
+.status1 > #stat {
+  text-align: right;
+}
+.form1 > #formOne {
+  text-align: left;
+}
