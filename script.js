@@ -101,21 +101,17 @@ function printTaskList() {
               <a href="#" style="font-size: 14px" onclick="updateTask(${i})">Update |</a>
               <a href="#" style="font-size: 14px" onclick="deleteTask(${i})">Delete</a>
             </div>
-            <label>Task Name:${tasksFromLocalStroage[i].taskName}</label>
-            <label>Task Description:${tasksFromLocalStroage[i].taskDesc}</label>
-            <label>Assigned To:${tasksFromLocalStroage[i].assignedTo}</label>
+            <label><strong>Task Name:</strong> ${tasksFromLocalStroage[i].taskName}</label>
+            <label><strong>Task Description:</strong> ${tasksFromLocalStroage[i].taskDesc}</label>
+            <label><strong>Assigned To:</strong> ${tasksFromLocalStroage[i].assignedTo}</label>
 
-            <label>Due Date:${tasksFromLocalStroage[i].duedate}</label>
-            <label>Status:${tasksFromLocalStroage[i].status}</label>
+            <label><strong>Due Date:</strong> ${tasksFromLocalStroage[i].duedate}</label>
+            <label><strong>Status:</strong>${tasksFromLocalStroage[i].status}</label>
           </div>
         </div>
       `;
     }
-
     card_place.innerHTML = output;
-   
-    
-      
   }
 }
 
@@ -163,11 +159,14 @@ function changeStatus(index){
       );
   let objectToUpdate = tasksFromLocalStroage[index];
   let statusObj = objectToUpdate.status;
+  let buttonClass;
 
   if(statusObj === 'Active'){
     statusObj = 'Done'
+    buttonClass = "btn btn-info btn-sm"
   }else{
     statusObj = 'Active'
+    buttonClass = "btn btn-success btn-sm"
   }
   
   objectToUpdate.status = statusObj;
@@ -176,6 +175,8 @@ function changeStatus(index){
         JSON.stringify(tasksFromLocalStroage)
       );
   document.getElementById(theButton).innerHTML = objectToUpdate.status;
+  document.getElementById(theButton).className = buttonClass;
+ 
      location.reload();
    
 }
