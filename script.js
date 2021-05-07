@@ -1,3 +1,11 @@
+/*
+  The Task-List-Manager is a web app used to create, save, update, view, and delete tasks inside a web browser.
+  Technlogies used: HTML, CSS, JS, and the app uses JavaScript localStorage to store data.  
+
+  *@authors  Tekalegn, Jorge, Esayas, and Manaye 
+  *@version 1.0
+  *@since   05-07-2021
+*/
 const taskName = document.getElementById("taskName");
 const taskDesc = document.getElementById("taskDesc");
 const assignedTo = document.getElementById("assignedTo");
