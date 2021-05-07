@@ -57,7 +57,7 @@ const taskFactory = (tName, tDesc, aTo, dDate) => {
     assignedTo: aTo,
     duedate: dDate,
     status:'Active',
-    buttonClass:'btn btn-success btn-sm',
+    buttonClass:'btn btn-danger btn-sm',
   };
 };
 
@@ -172,10 +172,10 @@ function changeStatus(index){
 
   if(statusObj === 'Active'){
     statusObj = 'Done'
-    changeButtonClass = 'btn btn-info btn-sm'
+    changeButtonClass = 'btn btn-success btn-sm'
   }else{
     statusObj = 'Active'
-    changeButtonClass = 'btn btn-success btn-sm'
+    changeButtonClass = 'btn btn-danger btn-sm'
   }
   
   objectToUpdate.status = statusObj;
