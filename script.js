@@ -49,6 +49,7 @@ const taskFactory = (tName, tDesc, aTo, dDate) => {
     assignedTo: aTo,
     duedate: dDate,
     status:'Active',
+    buttonClass:'btn btn-success btn-sm',
   };
 };
 
@@ -95,7 +96,7 @@ function printTaskList() {
         <div class="status1">
           <div class="card">
             <div id="stat">
-              <button type="button" class="btn btn-success btn-sm" id="${'button' + i}" onClick="changeStatus(${i})">
+              <button type="button" class="${tasksFromLocalStroage[i].buttonClass}" id="${'button' + i}" onClick="changeStatus(${i})">
               ${tasksFromLocalStroage[i].status}
               </button>
               <a href="#" style="font-size: 14px" onclick="updateTask(${i})">Update |</a>
@@ -159,24 +160,23 @@ function changeStatus(index){
       );
   let objectToUpdate = tasksFromLocalStroage[index];
   let statusObj = objectToUpdate.status;
-  let buttonClass;
+  let changeButtonClass = objectToUpdate.buttonClass;
 
   if(statusObj === 'Active'){
     statusObj = 'Done'
-    buttonClass = "btn btn-info btn-sm"
+    changeButtonClass = 'btn btn-info btn-sm'
   }else{
     statusObj = 'Active'
-    buttonClass = "btn btn-success btn-sm"
+    changeButtonClass = 'btn btn-success btn-sm'
   }
   
   objectToUpdate.status = statusObj;
+  objectToUpdate.buttonClass = changeButtonClass;
   localStorage.setItem(
         "tasksLocal",
         JSON.stringify(tasksFromLocalStroage)
       );
   document.getElementById(theButton).innerHTML = objectToUpdate.status;
-  document.getElementById(theButton).className = buttonClass;
- 
      location.reload();
    
 }
