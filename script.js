@@ -20,7 +20,7 @@ function processInput() {
   const messages = [];
   if (taskName.value === "" || taskName.value === null) {
     messages.push("Name is required");
-  }
+    document.querySelector('#tspan').innerHTML = "Name is required" }
   if (taskDesc.value === "" || taskDesc.value === null) {
     messages.push("Task Description is required");
   }
@@ -149,7 +149,9 @@ function updateTask(index){
 
 // Delete a task 
 function deleteTask(index){
-    let tasksFromLocalStroage = JSON.parse(
+    var result = confirm("Do you want to delete?");
+    if(result){
+      let tasksFromLocalStroage = JSON.parse(
         localStorage.getItem("tasksLocal")
       );
       tasksFromLocalStroage.splice(index, 1);
@@ -158,6 +160,8 @@ function deleteTask(index){
         JSON.stringify(tasksFromLocalStroage)
       );
       location.reload();
+    }
+    
 }
 
 // change task status 
@@ -171,7 +175,7 @@ function changeStatus(index){
   let changeButtonClass = objectToUpdate.buttonClass;
 
   if(statusObj === 'Active'){
-    statusObj = 'Done'
+    statusObj = 'Done &#128513;'
     changeButtonClass = 'btn btn-success btn-sm'
   }else{
     statusObj = 'Active'
