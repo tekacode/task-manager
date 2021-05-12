@@ -17,33 +17,22 @@ const errorMessage = document.getElementById("error_message");
 
 // Process inputs
 function processInput() {
-  const messages = [];
   if (taskName.value === "" || taskName.value === null) {
-    messages.push("Name is required");
-    document.querySelector('#tspan').innerHTML = "Name is required" }
-  if (taskDesc.value === "" || taskDesc.value === null) {
-    messages.push("Task Description is required");
-  }
-  if (assignedTo.value === "" || assignedTo.value === null) {
-    messages.push("Assigned to is required");
-  }
-   if (duedate.value === "" || duedate.value === null) {
-    messages.push("Due date is required");
-  }
-  if (messages.length === 0) {
-    const newTaskObject = taskFactory(
+    document.querySelector('#tspan').innerHTML = "Name is required" 
+  }else if (taskDesc.value === "" || taskDesc.value === null) {
+    document.querySelector('#dspan').innerHTML = "Description is required" 
+  }else if (assignedTo.value === "" || assignedTo.value === null) {
+    document.querySelector('#aspan').innerHTML = "Assign to is required" 
+  }else if (duedate.value === "" || duedate.value === null) {
+    document.querySelector('#dtspan').innerHTML = "Date is required" 
+  }else{
+    let newTaskObject = taskFactory(
     taskName.value,
     taskDesc.value,
     assignedTo.value,
     duedate.value
     );
     addTaskToLocalStorage(newTaskObject);
-  }else{
-    let messageOut = '';
-    for(let i=0; i < messages.length; i++){
-      messageOut += messages[i] + '\n';
-    }
-    alert(messageOut)
   }
 }
 
@@ -88,6 +77,7 @@ function addTaskToLocalStorage(task) {
       JSON.stringify(tasksFromLocalStroage)
     );
   }
+  location.reload();
 }
 
 // Print out tasks 
@@ -122,9 +112,10 @@ function printTaskList() {
     }
     card_place.innerHTML = output;
   }
+
 }
 
-// Edit a task 
+// Update a task 
 function updateTask(index){
     let tasksFromLocalStroage = JSON.parse(
         localStorage.getItem("tasksLocal")
@@ -159,8 +150,8 @@ function deleteTask(index){
         "tasksLocal",
         JSON.stringify(tasksFromLocalStroage)
       );
-      location.reload();
     }
+    location.reload();
     
 }
 
@@ -193,3 +184,10 @@ function changeStatus(index){
    
 }
 
+function alertBox(data){
+   errorMessage.innerHTML = `
+  <div class="alert alert-danger alert-dismissible">
+            ${data}
+  </div>
+  `
+}
