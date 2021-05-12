@@ -1,7 +1,9 @@
 body {
-  width: 600px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  width: 100%;
   margin: auto;
-  background-color: #eee;
+  background-image: linear-gradient(#eff,#000,#000);
 }
 
 h1 {
@@ -12,13 +14,15 @@ h1 {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
-  grid-gap: 10px;
-  background-color: rgb(165, 96, 96);
+  grid-gap: 20px;
+  background-color: rgb(0, 0, 0);
   padding: 10px;
+  border: #000 solid;
+  border-radius: 10px;
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.952);
   padding: 10px 0;
   font-size: 20px;
 }
@@ -37,4 +41,85 @@ h1 {
 }
 .form1 > #formOne {
   text-align: left;
+}
+
+
+
+.nav { 
+  background: #000;
+  height: 80px; 
+  width: 100%;
+}
+
+.nav ul {
+  height: 80px;
+  list-style: none;
+  margin: 0 auto; 
+  padding: 0;
+}
+
+.nav ul li {
+  color: #fff;
+  display: inline-block; 
+  height: 80px;
+  line-height: 80px; 
+  list-style: none;
+  padding: 0 10px;
+  transition: background .5s; 
+}
+
+.btn {
+  color: white;
+  background: #000;
+  padding: 10px 20px;
+  text-decoration: none; 
+  transition: background .5s;
+
+}
+
+.btn:hover, .nav ul li:hover {
+  background: #117bff;
+  cursor: pointer; 
+  transition: background .5s;  
+  
+}
+
+.btn-active {
+  color: white;
+  background: black;
+  padding: 10px 20px;
+  text-decoration: none; 
+  transition: background .5s;
+  cursor: pointer; 
+  border-radius: 5px;
+ 
+}
+.btn-delete {
+  color: white;
+  background: black;
+  padding: 10px 20px;
+  text-decoration: none; 
+  transition: background .5s;
+  cursor: pointer; 
+  border-radius: 5px;
+}
+.btn-delete:hover{
+  background: red;
+  cursor: pointer; 
+  transition: background .5s;
+
+}
+.btn-active:hover{
+  background: green;
+  cursor: pointer; 
+  transition: background .5s;
+
+}
+
+.footer p { 
+  color: #fff;
+  font-size: 18px;  
+  height: 40px; 
+  line-height: 40px;
+  margin: 0;  
 }
