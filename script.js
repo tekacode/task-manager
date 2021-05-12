@@ -94,11 +94,11 @@ function printTaskList() {
         <div class="status1">
           <div class="card">
             <div id="stat">
-              <button type="button" class="${tasksFromLocalStroage[i].buttonClass}" id="${'button' + i}" onClick="changeStatus(${i})">
+              <button type="button" class="${tasksFromLocalStroage[i].buttonClass} btn-active" id="${'button' + i}" onClick="changeStatus(${i})">
               ${tasksFromLocalStroage[i].status}
               </button>
-              <a href="#" style="font-size: 14px" onclick="updateTask(${i})">Update |</a>
-              <a href="#" style="font-size: 14px" onclick="deleteTask(${i})">Delete</a>
+              <a href="#" style="font-size: 14px" onclick="updateTask(${i})"><button class= "btn">Update</button></a>
+              <a href="#" style="font-size: 14px" onclick="deleteTask(${i})"><button class= "btn-delete">Delete</button></a>
             </div>
             <label><strong>Task Name:</strong> ${tasksFromLocalStroage[i].taskName}</label>
             <label><strong>Task Description:</strong> ${tasksFromLocalStroage[i].taskDesc}</label>
