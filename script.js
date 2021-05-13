@@ -46,7 +46,7 @@ const taskFactory = (tName, tDesc, aTo, dDate) => {
     assignedTo: aTo,
     duedate: dDate,
     status:'Active',
-    buttonClass:'btn btn-danger btn-sm',
+    buttonClass:'btn',
   };
 };
 
@@ -100,13 +100,14 @@ function printTaskList() {
               <a href="#" style="font-size: 14px" onclick="updateTask(${i})"><button class= "btn">Update</button></a>
               <a href="#" style="font-size: 14px" onclick="deleteTask(${i})"><button class= "btn-delete">Delete</button></a>
             </div>
-            <label><strong>Task Name:</strong> ${tasksFromLocalStroage[i].taskName}</label>
-            <label><strong>Task Description:</strong> ${tasksFromLocalStroage[i].taskDesc}</label>
-            <label><strong>Assigned To:</strong> ${tasksFromLocalStroage[i].assignedTo}</label>
-
-            <label><strong>Due Date:</strong> ${tasksFromLocalStroage[i].duedate}</label>
-            <label><strong>Status:</strong>${tasksFromLocalStroage[i].status}</label>
-          </div>
+            <div class= "content">
+            <label><strong>TASK NAME:</strong> ${tasksFromLocalStroage[i].taskName.toUpperCase()}</label>
+            <label><strong>DESCRIPTION:</strong> ${tasksFromLocalStroage[i].taskDesc.toUpperCase()}</label>
+            <label><strong>ASSIGNED TO:</strong> ${tasksFromLocalStroage[i].assignedTo.toUpperCase()}</label>
+            <label><strong>DUE DATE:</strong> ${tasksFromLocalStroage[i].duedate.toUpperCase()}</label>
+            <label><strong>STATUS:</strong>${tasksFromLocalStroage[i].status.toUpperCase()}</label>
+            </div>
+            </div>
         </div>
       `;
     }
@@ -166,11 +167,11 @@ function changeStatus(index){
   let changeButtonClass = objectToUpdate.buttonClass;
 
   if(statusObj === 'Active'){
-    statusObj = 'Done &#128513;'
+    statusObj = 'Completed &#128513;'
     changeButtonClass = 'btn btn-success btn-sm'
   }else{
     statusObj = 'Active'
-    changeButtonClass = 'btn btn-danger btn-sm'
+    changeButtonClass = 'btn'
   }
   
   objectToUpdate.status = statusObj;

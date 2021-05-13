@@ -16,6 +16,9 @@
       crossorigin="anonymous"
     />
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body onload="printTaskList();">
@@ -57,7 +60,7 @@
               name="taskDesc"
               class="md-textarea form-control"
               rows="3"
-              placeholder="Drescribe Your Task"
+              placeholder="Describe Your Task"
             ></textarea>
             <span id="dspan" style="color: red; font-size: 12px"
               ><em></em
@@ -101,7 +104,7 @@
                 <button
                   type="button"
                   onclick="processInput()"
-                  class="btn btn-dark"
+                  class="btn"
                 >
                   Add Task
                 </button>
@@ -110,6 +113,13 @@
           </div>
 
           <br />
+          <div>
+            <select name="filter" id="filter" >
+              <option value="all">All</option>
+              <option value="completed">Completed</option>
+              <option value="uncompleted">Uncompleted</option>
+            </select>
+          </div>
           <!---->
           <div id="card_place"></div>
           <!---->
