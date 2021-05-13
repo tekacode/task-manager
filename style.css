@@ -1,40 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   width: 100%;
   margin: auto;
-  background-image: linear-gradient(#eff,#000,#000);
+  background-image: linear-gradient(rgb(248, 248, 248),rgb(78, 53, 82),#000);
+  color: rgb(0, 0, 0);
+  min-height: 100vh;
+}
+
+
+.form-control {
+  border: 5px solid black;
+  margin-bottom: 10px;
 }
 
 h1 {
   text-align: center;
   margin-top: 1px;
+  color: black
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-gap: 20px;
-  background-color: rgb(0, 0, 0);
-  padding: 10px;
-  border: #000 solid;
-  border-radius: 10px;
-}
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.952);
-  padding: 10px 0;
-  font-size: 20px;
-}
-
-.heading1,
-.form1,
 .status1 {
-  grid-column: 1 / 7;
+  font-family: 'Roboto Mono', monospace;;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 500;
+ 
+}
+
+.content {
+   margin: 10px 20px;  
+   display: grid;
+
 }
 
 #stat {
-  text-align: right;
+  text-align: center;
 }
 .status1 > #stat {
   text-align: right;
@@ -43,12 +51,18 @@ h1 {
   text-align: left;
 }
 
+.card {
+  background-image: linear-gradient(rgb(121, 118, 138),#fff,rgb(59, 49, 49));
+  margin: 20px 80px;
+  border: 2px solid rgb(7, 8, 10);
+}
 
 
 .nav { 
   background: #000;
   height: 80px; 
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .nav ul {
@@ -60,14 +74,23 @@ h1 {
 
 .nav ul li {
   color: #fff;
-  display: inline-block; 
+  display: inline-block;
   height: 80px;
   line-height: 80px; 
   list-style: none;
   padding: 0 10px;
   transition: background .5s; 
+  
 }
 
+#filter {
+  color: white;
+  background: #000;
+  padding: 10px 20px;
+  text-decoration: none; 
+  transition: background .5s;
+  
+}
 .btn {
   color: white;
   background: #000;
@@ -78,7 +101,7 @@ h1 {
 }
 
 .btn:hover, .nav ul li:hover {
-  background: #117bff;
+  background: #47057c;
   cursor: pointer; 
   transition: background .5s;  
   
