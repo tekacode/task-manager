@@ -1,0 +1,22 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "CRUD application ",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tekacode/task-manager.git"
+  },
+  "author": "Tekalegn, Jorge, Esayas, and Manaye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tekacode/task-manager/issues"
+  },
+  "homepage": "https://github.com/tekacode/task-manager#readme",
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  }
+}
