@@ -185,10 +185,56 @@ function changeStatus(index){
    
 }
 
-function alertBox(data){
-   errorMessage.innerHTML = `
-  <div class="alert alert-danger alert-dismissible">
-            ${data}
-  </div>
-  `
+// Show filtered tasks 
+
+function showFiltered(event){
+  let fillteredTasks = [];
+  let output = ""
+  let tasksFromLocalStroage = JSON.parse(
+    localStorage.getItem("tasksLocal")
+  );
+
+  if(event.target.value === 'completed'){
+   for(let i=0; i <tasksFromLocalStroage.length; i++){
+    if(tasksFromLocalStroage[i].status === 'Completed &#128513;'){
+      fillteredTasks.push(tasksFromLocalStroage[i])
+    }
+  }
+  }else if(event.target.value === 'uncompleted'){
+   for(let i=0; i <tasksFromLocalStroage.length; i++){
+    if(tasksFromLocalStroage[i].status === 'Active'){
+      fillteredTasks.push(tasksFromLocalStroage[i])
+    }
+  }
+  }else if(event.target.value === 'all'){
+    fillteredTasks = tasksFromLocalStroage
+  }
+
+
+  for(let i =0; i< fillteredTasks.length; i++){
+
+    output += `
+        <div class="status1">
+          <div class="card">
+            <div id="stat">
+              <button type="button" class="${fillteredTasks[i].buttonClass} btn-active" id="${'button' + i}" onClick="changeStatus(${i})">
+              ${fillteredTasks[i].status}
+              </button>
+              <a href="#" style="font-size: 14px" onclick="updateTask(${i})"><button class= "btn">Update</button></a>
+              <a href="#" style="font-size: 14px" onclick="deleteTask(${i})"><button class= "btn-delete">Delete</button></a>
+            </div>
+            <div class= "content">
+            <label><strong>TASK NAME:</strong> ${fillteredTasks[i].taskName.toUpperCase()}</label>
+            <label><strong>DESCRIPTION:</strong> ${fillteredTasks[i].taskDesc.toUpperCase()}</label>
+            <label><strong>ASSIGNED TO:</strong> ${fillteredTasks[i].assignedTo.toUpperCase()}</label>
+            <label><strong>DUE DATE:</strong> ${fillteredTasks[i].duedate.toUpperCase()}</label>
+            <label><strong>STATUS:</strong>${fillteredTasks[i].status.toUpperCase()}</label>
+            </div>
+            </div>
+        </div>
+      `;
+
+  }
+    card_place.innerHTML = output;
+
 }
