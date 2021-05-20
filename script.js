@@ -185,8 +185,7 @@ function changeStatus(index){
      location.reload();
    
 }
-<<<<<<< HEAD
-=======
+
 
 // Show filtered tasks 
 
@@ -241,4 +240,4 @@ function showFiltered(event){
     card_place.innerHTML = output;
 
 }
->>>>>>> 1b394b68b3f315e7baa148ee30e846e3c8deb8b3
+
