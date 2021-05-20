@@ -7,62 +7,23 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  width: 100%;
+  width: 1100px;
   margin: auto;
-  background-image: linear-gradient(rgb(248, 248, 248),rgb(78, 53, 82),#000);
+  background-image: linear-gradient(#000000,rgb(126, 117, 148),#000);
   color: rgb(0, 0, 0);
   min-height: 100vh;
 }
-
-
-.form-control {
-  border: 5px solid black;
-  margin-bottom: 10px;
+.container {
+  margin: 0 ;
 }
-
-h1 {
-  text-align: center;
-  margin-top: 1px;
-  color: black
-}
-
-
-.status1 {
-  font-family: 'Roboto Mono', monospace;;
-  color: black;
-  margin-bottom: 20px;
-  font-weight: 500;
- 
-}
-
-.content {
-   margin: 10px 20px;  
-   display: grid;
-
-}
-
-#stat {
-  text-align: center;
-}
-.status1 > #stat {
-  text-align: right;
-}
-.form1 > #formOne {
-  text-align: left;
-}
-
-.card {
-  background-image: linear-gradient(rgb(121, 118, 138),#fff,rgb(59, 49, 49));
-  margin: 20px 80px;
-  border: 2px solid rgb(7, 8, 10);
-}
-
 
 .nav { 
-  background: #000;
+  background: linear-gradient(rgb(56, 1, 44),rgb(31, 1, 59),rgb(29, 1, 65));
   height: 80px; 
   width: 100%;
   margin-bottom: 10px;
+  border: solid 2px;
+  border-radius: 50px 50px;
 }
 
 .nav ul {
@@ -80,30 +41,127 @@ h1 {
   list-style: none;
   padding: 0 10px;
   transition: background .5s; 
-  
 }
 
-#filter {
-  color: white;
-  background: #000;
-  padding: 10px 20px;
-  text-decoration: none; 
-  transition: background .5s;
-  
+h1 {
+  text-align: center;
+  margin-top: 1px;
+  color: #fff;
 }
+
+.form-group {
+ color: #fff;
+}
+
+.form-control {
+  border: rgb(0, 0, 0) 5px solid;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+#filter ,ol {  
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  width: 340px;
+}
+
+
+
+#card_place {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  margin: 10px 10px;
+    
+}
+
+div.status1 {  
+ 
+  font-weight: 500;
+  margin: 0px auto;
+   
+}
+
+section ul {
+  display: flex;
+  margin-bottom: 8px;
+}
+section ul li{
+  list-style: none;
+  padding: 4px 4px;
+  margin: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+section ul li.active{
+  background: #551f9c;
+  color: #fff;
+}
+.container div.card {
+  margin: 20px 40px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  border: springgreen 5px solid;
+  font-family: 'Roboto Mono', monospace;;
+  box-shadow: 0 20px 50px rgb(0,0,0,0.2);
+  background: #08001f;
+     
+}
+
+
+div #stat {
+  margin: 10px 40px;
+  justify-content: center;
+}
+
+.container .content {
+  margin-top: 20px;  
+  margin-left: 20px;
+  font-weight: 900;
+  color: #fff;
+  background: #0c002b;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+
+}
+.container.content::before {
+  content: "";
+  position: absolute; 
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.1);
+
+}
+
+.container #estado{
+  color: blue;
+  z-index: 1;
+  transition: 0,5s;
+}
+.container #estado:hover{
+  transform: translate(-20px)
+
+}
+
+
 .btn {
   color: white;
   background: #000;
   padding: 10px 20px;
   text-decoration: none; 
   transition: background .5s;
-
 }
 
 .btn:hover, .nav ul li:hover {
   background: #47057c;
   cursor: pointer; 
-  transition: background .5s;  
+  transition: background .5s;
+  color: #fff
   
 }
 
@@ -120,7 +178,7 @@ h1 {
 .btn-delete {
   color: white;
   background: black;
-  padding: 10px 20px;
+  padding: 12px 24px;
   text-decoration: none; 
   transition: background .5s;
   cursor: pointer; 
@@ -130,19 +188,22 @@ h1 {
   background: red;
   cursor: pointer; 
   transition: background .5s;
+  
 
 }
 .btn-active:hover{
   background: green;
   cursor: pointer; 
   transition: background .5s;
-
+ 
+}
+.footer{
+  justify-content: center;
 }
 
 .footer p { 
   color: #fff;
   font-size: 18px;  
   height: 40px; 
-  line-height: 40px;
-  margin: 0;  
+  line-height: 40px;   
 }
