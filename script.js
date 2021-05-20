@@ -150,6 +150,7 @@ function deleteTask(index){
         "tasksLocal",
         JSON.stringify(tasksFromLocalStroage)
       );
+      
     }
     location.reload();
     
@@ -182,12 +183,4 @@ function changeStatus(index){
   document.getElementById(theButton).innerHTML = objectToUpdate.status;
      location.reload();
    
-}
-
-function alertBox(data){
-   errorMessage.innerHTML = `
-  <div class="alert alert-danger alert-dismissible">
-            ${data}
-  </div>
-  `
 }
