@@ -46,7 +46,7 @@ const taskFactory = (tName, tDesc, aTo, dDate) => {
     assignedTo: aTo,
     duedate: dDate,
     status:'Active',
-    buttonClass:'btn btn-danger btn-sm',
+    buttonClass:'btn',
   };
 };
 
@@ -94,19 +94,20 @@ function printTaskList() {
         <div class="status1">
           <div class="card">
             <div id="stat">
-              <button type="button" class="${tasksFromLocalStroage[i].buttonClass}" id="${'button' + i}" onClick="changeStatus(${i})">
-              ${tasksFromLocalStroage[i].status}
+              <button type="button" class="fas fa-check ${tasksFromLocalStroage[i].buttonClass} btn-active" id="${'button' + i}" onClick="changeStatus(${i})">
+              
               </button>
-              <a href="#" style="font-size: 14px" onclick="updateTask(${i})">Update |</a>
-              <a href="#" style="font-size: 14px" onclick="deleteTask(${i})">Delete</a>
+              <a href="#" style="font-size: 14px" onclick="updateTask(${i})"><button class= "fas fa-edit btn"></button></a>
+              <a href="#" style="font-size: 14px" onclick="deleteTask(${i})"><button class= "fas fa-trash btn-delete"></button></a>
             </div>
-            <label><strong>Task Name:</strong> ${tasksFromLocalStroage[i].taskName}</label>
-            <label><strong>Task Description:</strong> ${tasksFromLocalStroage[i].taskDesc}</label>
-            <label><strong>Assigned To:</strong> ${tasksFromLocalStroage[i].assignedTo}</label>
-
-            <label><strong>Due Date:</strong> ${tasksFromLocalStroage[i].duedate}</label>
-            <label><strong>Status:</strong>${tasksFromLocalStroage[i].status}</label>
-          </div>
+            <div class= "content">
+            <label><strong>TASK NAME:</strong> ${tasksFromLocalStroage[i].taskName.toUpperCase()}</label>
+            <label><strong>DESCRIPTION:</strong> ${tasksFromLocalStroage[i].taskDesc.toUpperCase()}</label>
+            <label><strong>ASSIGNED TO:</strong> ${tasksFromLocalStroage[i].assignedTo.toUpperCase()}</label>
+            <label><strong>DUE DATE:</strong> ${tasksFromLocalStroage[i].duedate.toUpperCase()}</label>
+            <label><strong>STATUS:</strong>${tasksFromLocalStroage[i].status.toUpperCase()}</label>
+            </div>
+            </div>
         </div>
       `;
     }
@@ -167,11 +168,11 @@ function changeStatus(index){
   let changeButtonClass = objectToUpdate.buttonClass;
 
   if(statusObj === 'Active'){
-    statusObj = 'Done &#128513;'
-    changeButtonClass = 'btn btn-success btn-sm'
+    statusObj = 'Completed &#128513;'
+    changeButtonClass = 'btn'
   }else{
     statusObj = 'Active'
-    changeButtonClass = 'btn btn-danger btn-sm'
+    changeButtonClass = 'btn'
   }
   
   objectToUpdate.status = statusObj;
@@ -184,3 +185,60 @@ function changeStatus(index){
      location.reload();
    
 }
+<<<<<<< HEAD
+=======
+
+// Show filtered tasks 
+
+function showFiltered(event){
+  let fillteredTasks = [];
+  let output = ""
+  let tasksFromLocalStroage = JSON.parse(
+    localStorage.getItem("tasksLocal")
+  );
+
+  if(event.target.value === 'completed'){
+   for(let i=0; i <tasksFromLocalStroage.length; i++){
+    if(tasksFromLocalStroage[i].status === 'Completed &#128513;'){
+      fillteredTasks.push(tasksFromLocalStroage[i])
+    }
+  }
+  }else if(event.target.value === 'incomplete'){
+   for(let i=0; i <tasksFromLocalStroage.length; i++){
+    if(tasksFromLocalStroage[i].status === 'Active'){
+      fillteredTasks.push(tasksFromLocalStroage[i])
+    }
+  }
+  }else if(event.target.value === 'all'){
+    fillteredTasks = tasksFromLocalStroage
+  }
+
+
+  for(let i =0; i< fillteredTasks.length; i++){
+
+    output += `
+        <div class="status1">
+          <div class="card">
+            <div id="stat">
+              <button type="button" class="fas fa-check btn-success ${fillteredTasks[i].buttonClass} btn-active" id="${'button' + i}" onClick="changeStatus(${i})">
+              
+              </button>
+              <a href="#" style="font-size: 14px" onclick="updateTask(${i})"><button class="btn fas fa-edit"></button></a>
+              <a href="#" style="font-size: 14px" onclick="deleteTask(${i})"><button class="fas fa-trash btn-delete"></button></a>
+            </div>
+            <div class= "content">
+            <label><strong>TASK NAME:</strong> ${fillteredTasks[i].taskName.toUpperCase()}</label>
+            <label><strong>DESCRIPTION:</strong> ${fillteredTasks[i].taskDesc.toUpperCase()}</label>
+            <label><strong>ASSIGNED TO:</strong> ${fillteredTasks[i].assignedTo.toUpperCase()}</label>
+            <label ><strong>DUE DATE:</strong> ${fillteredTasks[i].duedate.toUpperCase()}</label>
+            <label><strong>STATUS:</strong>${fillteredTasks[i].status.toUpperCase()}</label>
+            </div>
+            </div>
+        </div>
+      `;
+
+  }
+    card_place.innerHTML = output;
+
+}
+>>>>>>> 1b394b68b3f315e7baa148ee30e846e3c8deb8b3

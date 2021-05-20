@@ -9,29 +9,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body onload="printTaskList();">
-    <main class="container">
-      <div class="grid-container">
+
+    <!--nav- bar content-->
+          <div class="nav">      
+        <ul>
+          <a href="waw.html" target="_blank"><li >Who are We?</li></a>
+          <a href="about.html" target="_blank"><li >About</li></a>
+        </ul>
+      </div>    
+      <!--Heading-->
         <div class="heading1"><h1>Task List Manager</h1></div>
 
         <div class="form1">
           <div id="error_message"></div>
           <div id="aBox"></div>
           <div class="form-group">
-            <label for="taskName">Task Name:</label>
+            <!--Task name-->
+            <label for="taskName">Task:</label>
             <input
               type="text"
               class="form-control"
               id="taskName"
               name="taskName"
+              placeholder="Name"
             />
             <span id="tspan" style="color: red; font-size: 12px"
               ><em></em
@@ -45,6 +54,7 @@
               name="taskDesc"
               class="md-textarea form-control"
               rows="3"
+              placeholder="Describe Your Task"
             ></textarea>
             <span id="dspan" style="color: red; font-size: 12px"
               ><em></em
@@ -53,12 +63,13 @@
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="assignedTo">Assigned To:</label>
+                  <label for="assignedTo"> To:</label>
                   <input
                     type="text"
                     class="form-control"
                     id="assignedTo"
                     name="assignedTo"
+                    placeholder="Assigned"
                   />
                   <span id="aspan" style="color: red; font-size: 12px"
                     ><em></em
@@ -81,27 +92,41 @@
                 </div>
               </div>
             </div>
-
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
+                <!--addtask button --> 
+            <div class="form-group">             
                 <button
                   type="button"
                   onclick="processInput()"
-                  class="btn btn-dark"
+                  class="fas fa-plus btn"
                 >
-                  Add Task
-                </button>
-              </div>
+                </button>             
             </div>
           </div>
 
           <br />
-          <!---->
+          <div>
+            <!--filter buttons -->
+            <section id="filter" onclick="showFiltered(event)" >
+              <ol>
+                <li><button class= "btn" value="all">All</button></li>
+                <li><button class= "btn" value="completed">Completed</button></li>
+                <li><button class= "btn" value="incomplete">Incomplete</button></li>
+              </ol>                
+            </section>
+          </div>
+          <!--card place-->
+          <div class="container">
           <div id="card_place"></div>
           <!---->
         </div>
-      </div>
-    </main>
+        </div>
+    </div>
+      <!--Footer-->
+      <div class="footer">
+        
+          <p>&copy; Team 4 JWD Generation"</p>
+        </div>
+      </div>    
     <script src="script.js"></script>
   </body>
 </html>
