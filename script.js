@@ -45,7 +45,7 @@ const taskFactory = (tName, tDesc, aTo, dDate) => {
     taskDesc: tDesc,
     assignedTo: aTo,
     duedate: dDate,
-    status:'incomplte',
+    status:'Active',
     buttonClass:'btn',
   };
 };
@@ -166,11 +166,11 @@ function changeStatus(index){
   let statusObj = objectToUpdate.status;
   let changeButtonClass = objectToUpdate.buttonClass;
 
-  if(statusObj === 'incomplete'){
+  if(statusObj === 'Active'){
     statusObj = 'Completed &#128513;'
     changeButtonClass = 'btn'
   }else{
-    statusObj = 'incomplete'
+    statusObj = 'Active'
     changeButtonClass = 'btn'
   }
   
@@ -202,7 +202,7 @@ function showFiltered(event){
   }
   }else if(event.target.value === 'incomplete'){
    for(let i=0; i <tasksFromLocalStroage.length; i++){
-    if(tasksFromLocalStroage[i].status === 'incomplete'){
+    if(tasksFromLocalStroage[i].status === 'Active'){
       fillteredTasks.push(tasksFromLocalStroage[i])
     }
   }
