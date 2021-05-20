@@ -151,6 +151,7 @@ function deleteTask(index){
         "tasksLocal",
         JSON.stringify(tasksFromLocalStroage)
       );
+      
     }
     location.reload();
     
@@ -184,6 +185,7 @@ function changeStatus(index){
      location.reload();
    
 }
+
 
 // Show filtered tasks 
 
@@ -238,3 +240,4 @@ function showFiltered(event){
     card_place.innerHTML = output;
 
 }
+
